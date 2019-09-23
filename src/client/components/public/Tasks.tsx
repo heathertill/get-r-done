@@ -43,7 +43,7 @@ const Tasks: React.SFC<TasksProps> = () => {
                     <div key={task.id} className="card border m-3 p-2">
                         <div className="card-body">
                             <h5 className="card-title" >{task.title}</h5>
-                            <h6 className="card-suptitle">{task.name}</h6>
+                            <h6 className="card-subtitle">{task.name}</h6>
                             <p className="card-text">Due: {moment(task.due).format('MMMM D, YYYY')}</p>
                             <h4>
                                 <span className="badge badge-secondary m-2">{task.categoryname}</span>

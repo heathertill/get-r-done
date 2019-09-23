@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { json, SetAccessToken, ClearAccessToken, User } from '../../utils/api';
+import { json, SetAccessToken, ClearAccessToken } from '../../utils/api';
 import { RouteComponentProps } from 'react-router-dom';
 
 

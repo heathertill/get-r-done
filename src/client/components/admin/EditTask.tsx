@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Component } from 'react';
 import { json } from '../../utils/api';
 import { RouteComponentProps } from 'react-router-dom'
 import { useState, useEffect } from 'react';
@@ -28,7 +27,7 @@ const EditTask: React.SFC<EditTaskProps> = ({ history, match: { params: { id } }
     const [categories, setCategories] = useState<Categories[]>([]);
     const [priorities, setPriorities] = useState<Priorities[]>([]);
 
-    const editTask = async () => {
+    const getTask = async () => {
         try {
             let task = await json(`/api/tasks/${id}`);
             let category = await json('/api/categories')
@@ -46,7 +45,7 @@ const EditTask: React.SFC<EditTaskProps> = ({ history, match: { params: { id } }
         }
     }
 
-    useEffect(() => { editTask() }, [id]);
+    useEffect(() => { getTask() }, [id]);
 
     const handleEdit = async () => {
         let data = {
@@ -114,8 +113,7 @@ const EditTask: React.SFC<EditTaskProps> = ({ history, match: { params: { id } }
                 <button className="btn btn-info m-2"
                     onClick={handleEdit}>Edit</button>
                 <button className="btn btn-info m-2"
-                    onClick={handleDelete}
-                >Delete Task</button>
+                    onClick={handleDelete}>Delete Task</button>
             </div>
         </section>
     );
