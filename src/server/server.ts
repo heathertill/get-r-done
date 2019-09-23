@@ -26,12 +26,12 @@ app.use(passport.initialize());
 
 app.use(routes);
 
-// const server = http.createServer(app);
-// const io = socket(server);
+const server = http.createServer(app);
+const io = socket(server);
 
-// io.on('connection', () => {
-//     console.log('a user is connected')
-// });
+io.on('connection', () => {
+    console.log('a user is connected')
+});
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'))
