@@ -1,4 +1,5 @@
-import { Router } from 'express'
+import { Router } from 'express';
+import { io } from '../../server';
 import queries from '../../db';
 
 import { isAdmin } from '../../utils/routerMiddleware';
@@ -34,6 +35,7 @@ router.post('/', async (req, res, next) => {
     let tasksBody = req.body;
     try {
         let newTask = await queries.Tasks.newTask(tasksBody);
+        io.emit('newTask');
         res.json(newTask)
     } catch (e) {
         console.log(e)
@@ -45,7 +47,8 @@ router.put('/:id', async (req, res, next) => {
     let tasksBody = req.body;
     let id = req.params.id;
     try {
-        await queries.Tasks.updateTask(tasksBody, id)
+        await queries.Tasks.updateTask(tasksBody, id);
+        io.emit('newTask');
         res.json({ message: 'Task updated!'})
     } catch (e) {
         console.log(e)
@@ -57,6 +60,7 @@ router.delete('/:id', async (req, res, next) => {
     let id = req.params.id;
     try {
         await queries.Tasks.deleteTask(id);
+        io.emit('newTask');
         res.json({ message: 'Task deleted!' })
     } catch (e) {
         console.log(e)

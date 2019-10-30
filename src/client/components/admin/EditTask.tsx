@@ -30,16 +30,19 @@ const EditTask: React.SFC<EditTaskProps> = ({ history, match: { params: { id } }
     const getTask = async () => {
         try {
             let task = await json(`/api/tasks/${id}`);
-            let category = await json('/api/categories')
-            let priority = await json('/api/priority')
+            let category = await json('/api/categories');
+            let priority = await json('/api/priority');
             setCategories(category);
-            setCategoryid(task.categoryid)
+            setCategoryid(task.categoryid);
             setPriorities(priority);
-            setPriorityid(task.priorityid)
+            setPriorityid(task.priorityid);
             setTitle(task.title);
             setDetails(task.details);
+            // let taskDate = moment(task.due).format('YYYY-MM-DD');
+            // setDue(taskDate);
             setDue(task.due);
-            console.log('due', due, task.due)
+            console.log('task.due', task.due)
+            
         } catch (e) {
             console.log(e)
         }

@@ -15,7 +15,7 @@ const App: React.SFC<AppProps> = () => {
     return (
         <BrowserRouter>
             <main className="container">
-                <Navbar/>
+                <Navbar />
                 <Switch>
                     <Route exact path='/' component={Tasks} />
                     <Route exact path='/tasks/:id' component={OneTask} />

@@ -77,7 +77,9 @@ const NewTask: React.SFC<NewTaskProps> = ({ history }) => {
     }
 
 
-    useEffect(() => { getInfo() }, [])
+    useEffect(() => { getInfo() }, []);
+
+
 
     return (
         <section>

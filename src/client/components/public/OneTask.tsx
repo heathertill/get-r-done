@@ -41,7 +41,7 @@ const OneTask: React.SFC<OneTaskProps> = ({ match: { params: { id } } }) => {
                     <h5 className="card-title">Task: {task.title}</h5>
                     <h6 className="card-suptitle">Created by: {task.name}</h6>
                     <p className="card-text">Details: {task.details}</p>
-                    <p className="card-text">Due: {moment(task.due).format('MMMM Do, YYYY')}</p>
+                    <p className="card-text">Due: {moment(task.due).format('MMMM DD, YYYY')}</p>
                     <h4>
                         <span className="badge badge-secondary m-2">{task.categoryname}</span>
                         <span className="badge badge-secondary m-2">{task.priorityname}</span>
