@@ -14,3 +14,4 @@ export default {
     }
 }
 
+mysql://b550de9c2838dc:dcd9b5ec@us-cdbr-iron-east-05.cleardb.net/heroku_8df472d45ef8918?reconnect=true
