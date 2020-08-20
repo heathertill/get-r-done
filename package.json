@@ -30,7 +30,7 @@
         "@types/react-dom": "^16.8.4",
         "@types/react-router-dom": "^4.3.4",
         "@types/socket.io": "^2.1.2",
-        "bcrypt": "^3.0.6",
+        "bcrypt": "^5.0.0",
         "bootstrap": "^4.3.1",
         "css-loader": "^1.0.1",
         "dotenv": "^8.0.0",
